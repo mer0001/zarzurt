@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Zayle Yazılım Hizmetleri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="UygGiris()" oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+    <div class="SplashScreen">
+        <div class="loadScreen">
+            <img src="cookiesimulator.png" class="LoadGif">
+        </div>
+    </div>
+    <div class="KapatBtn">
+        <i class='bx bx-x KapatIcon' onclick="kapatBtn()"></i>
+    </div>
+    <div class="control drag-enable">
+
+    </div>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <p>Zayle Yazılım Hizmetleri | Giriş Yap</p>
+        </div>
+    </div>
+    <div class="KapsaBar">
+        <div class="image">
+            <img src="bg.png" alt="">
+        </div>
+        <div class="girisekran">
+            <div class="girisInner">
+                <h1>Giriş Yap</h1>
+                <div class="girisPage">
+                    <input type="text" class="girisYapText" placeholder="Kullanıcı Adı veya E-posta">
+                    <input type="password" class="girisYapText" placeholder="Şifre">
+                    <a href="devam.html" class="girisYapText girisBtn">Giriş Yap</a>
+                    <a href="#" style="text-align: center; margin-top: 5px; color: rgb(209, 139, 255);">Şifreni mi
+                        unuttun?</a>
+                </div>
+                <div class="socialMedia">
+                    <hr>
+                    <div class="IconsSocial">
+                        <i class='bx bxl-telegram SIcon'></i>
+                        <p class="telegramText">Telegram Adresimiz</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function kapatBtn() {
+        window.close();
+    }
+</script>
+<script>
+    function UygGiris() {
+        var win = nw.Window.get();
+        win.setResizable(false);
+        setTimeout(function () {
+            $(".SplashScreen").css("opacity", "0%");
+            $(".LoadScreen").css("opacity", "0%");
+            $(".LoadGif").css("width", "1px");
+            UygGirisStep2();
+        }, 3000);
+    }
+
+    function UygGirisStep2() {
+        setTimeout(function () {
+            $(".SplashScreen").css("display", "none");
+            $(".LoadScreen").css("display", "none");
+            $(".LoadGif").css("display", "none");
+        }, 500);
+    }
+</script>
