@@ -29,21 +29,39 @@
             <p>Zayle Yazılım Hizmetleri | Giriş Yap</p>
         </div>
     </div>
-    <div class="KapsaBar" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <h2 style="color:white; font-weight: bolder; font-size: 48px;">BAKIM VAR!</h2>
-        <p style="color:white; font-weight: bolder; font-size: 12px;">Teknik ekibimiz tarafından uygulamamızda bakım
-            gerçekleştiriliyor.</p>
+    <div class="KapsaBar">
+        <div class="image">
+            <img src="bg.png" alt="">
+        </div>
+        <div class="girisekran">
+            <div class="girisInner">
+                <h1>Giriş Yap</h1>
+                <div class="girisPage">
+                    <input type="text" class="girisYapText" id="username" placeholder="Kullanıcı Adı veya E-posta">
+                    <input type="password" class="girisYapText" id="password" placeholder="Şifre">
+                    <a onclick="girisyap();" style="cursor:pointer;" class="girisYapText girisBtn">Giriş Yap</a>
+                    <a href="https://zayleyazilim.com/"
+                        style="text-align: center; margin-top: 5px; color: rgb(209, 139, 255);">Şifreni mi
+                        unuttun?</a>
+                </div>
+                <div class="socialMedia">
+                    <hr>
+                    <a href="https://t.me/zayleyazilim" style="text-decoration: none;">
+                        <div class="IconsSocial">
+                            <i class='bx bxl-telegram SIcon'></i>
+                            <p class="telegramText">Telegram Adresimiz</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
 </html>
 
 <script>
-    function kapatBtn() {
-        window.close();
-    }
-</script>
-<script>
+
     function UygGiris() {
         var win = nw.Window.get();
         win.setResizable(false);
@@ -61,5 +79,37 @@
             $(".LoadScreen").css("display", "none");
             $(".LoadGif").css("display", "none");
         }, 500);
+    }
+</script>
+
+<script>
+    function girisyap() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        if (username.length === 0 || password.length === 0) {
+            if (username == "/kfr") {
+                alert("amınakoyim fiko");
+            }
+            else {
+                alert("Kullanıcı adı ve Şifre boş bırakılamaz!");
+                return;
+            }
+        }
+        else if (username == "info@zayleyazilim@gmail.com" && password == "34ZsfgQertZvDasDw") {
+            window.location.href = "devam.html";
+        }
+
+        else if (username === "" && password === "") {
+            alert("Bilgileri doğru girdiğinizden emin olun!");
+        } else {
+            alert("Bir yanlışlık mı oldu??");
+            return;
+        }
+    }
+</script>
+<script>
+    function kapatBtn() {
+        window.close();
     }
 </script>
